@@ -20,7 +20,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new $.ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
+    new $.ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
     new $.NamedModulesPlugin(),
   ]
 }
