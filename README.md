@@ -1,5 +1,7 @@
 # extract-text-demo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/extract-text-demo.svg)](https://greenkeeper.io/)
+
 
 dev setup:
 
