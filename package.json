@@ -9,7 +9,7 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.4.0",
-    "css-loader": "^0.26.2",
+    "css-loader": "^0.27.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "load-webpack-plugins": "^0.0.2",
     "style-loader": "^0.13.2",
