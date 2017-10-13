@@ -1,9 +1,10 @@
 const $ = require('load-webpack-plugins')();
+const path = require('path');
 
 module.exports = {
-  entry: { 'app': './src/app.js' },
+  entry: { app: './src/app.js' },
   output: {
-    path: 'dist',
+    path: path.resolve('dist'),
     filename: '[name].js'
   },
   devtool: 'source-map',
@@ -12,7 +13,7 @@ module.exports = {
       { test: /\.js$/, use: [{ loader: 'babel-loader' }] },
       {
         test: /\.css$/,
-        use: $.ExtractTextPlugin.extract({
+        use: $.ExtractCssChunksPlugin.extract({
           fallback: 'style-loader',
           use: [{ loader: 'css-loader' }]
         })
@@ -20,8 +21,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new $.ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
-    new $.NamedModulesPlugin(),
+    // new $.ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
+    new $.ExtractCssChunksPlugin(),
+    new $.NamedModulesPlugin()
   ]
-}
-
+};
