@@ -1,5 +1,5 @@
-const $ = require('load-webpack-plugins')();
-const path = require('path');
+const $ = require('load-webpack-plugins')()
+const path = require('path')
 
 module.exports = {
   entry: { app: './src/app.js' },
@@ -10,7 +10,10 @@ module.exports = {
   devtool: 'source-map',
   module: {
     loaders: [
-      { test: /\.js$/, use: [{ loader: 'babel-loader' }] },
+      {
+        test: /\.js$/,
+        use: [{ loader: 'babel-loader', options: { plugins: ['syntax-dynamic-import', 'dual-import'] } }]
+      },
       {
         test: /\.css$/,
         use: $.ExtractCssChunksPlugin.extract({
@@ -23,6 +26,7 @@ module.exports = {
   plugins: [
     // new $.ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
     new $.ExtractCssChunksPlugin(),
-    new $.NamedModulesPlugin()
+    new $.NamedModulesPlugin(),
+    new $.HtmlPlugin()
   ]
-};
+}
