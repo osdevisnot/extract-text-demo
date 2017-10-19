@@ -1188,6 +1188,12 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+flush-css-chunks-webpack-plugin@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/flush-css-chunks-webpack-plugin/-/flush-css-chunks-webpack-plugin-0.0.3.tgz#cd5c2188b02be77cb30df64e818fafe01a4634da"
+  dependencies:
+    webpack-sources "^1.0.1"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

@@ -5,7 +5,8 @@ module.exports = {
   entry: { app: './src/app.js' },
   output: {
     path: path.resolve('dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: ''
   },
   devtool: 'source-map',
   module: {
@@ -26,6 +27,7 @@ module.exports = {
   plugins: [
     // new $.ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
     new $.ExtractCssChunksPlugin(),
+    new $.FlushCssChunksPlugin({ entryOnly: true }),
     new $.NamedModulesPlugin(),
     new $.HtmlPlugin()
   ]
