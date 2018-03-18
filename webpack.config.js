@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         use: [{ loader: 'babel-loader', options: { plugins: ['syntax-dynamic-import', 'dual-import'] } }]

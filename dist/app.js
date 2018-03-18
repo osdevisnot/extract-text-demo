@@ -80,7 +80,7 @@ if (typeof window === "object") {
 /******/ 		// start chunk loading
 /******/ 		var head = document.getElementsByTagName('head')[0];
 /******/ 		var script = document.createElement('script');
-/******/ 		script.type = 'text/javascript';
+/******/ 		script.type = "text/javascript";
 /******/ 		script.charset = 'utf-8';
 /******/ 		script.async = true;
 /******/ 		script.timeout = 120000;
@@ -418,11 +418,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js__);
 
 console.log('this is app.js');
-Promise.all([__webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, "./src/a.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('a.css')]).then(proms => proms[0]).then(name => {
-  console.log('now load the css in browser', name);
-});
-Promise.all([__webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, "./src/b.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('b.css')]).then(proms => proms[0]);
-Promise.all([__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "./src/c.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('c.css')]).then(proms => proms[0]);
+
+setTimeout(() => {
+    Promise.all([__webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, "./src/a.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('a.css')]).then(proms => proms[0]).then(name => {
+        console.log('loaded a.css in browser');
+    });
+}, 5000);
+
+setTimeout(() => {
+    Promise.all([__webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, "./src/b.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('b.css')]).then(proms => proms[0]).then(name => {
+        console.log('loaded b.css in browser');
+    });
+}, 10000);
+
+setTimeout(() => {
+    Promise.all([__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "./src/c.css")), __WEBPACK_IMPORTED_MODULE_0_babel_plugin_dual_import_importCss_js___default()('c.css')]).then(proms => proms[0]).then(_ => {
+        console.log('loaded c.css in browser');
+    });
+}, 15000);
 
 /***/ })
 
